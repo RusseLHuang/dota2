@@ -8,7 +8,14 @@ export class Index extends React.Component {
   render() {
     return (
       <div>
-        <p>My Index page</p>
+        <div className="nav-bar-bg">
+          <div className="nav-bar">
+            <div className="dota-logo">
+              <img src="/images/dotalogo.png"/>
+            </div>
+          </div>
+        </div>
+        { this.props.children }
       </div>
     )
   }

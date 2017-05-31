@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  entry : ['babel-polyfill','../client/index'],
+  entry : ['babel-polyfill','./client/index'],
   output: {
       publicPath: '/',
       path: path.join(__dirname, '../public/scripts'),
@@ -21,7 +21,7 @@ module.exports = {
     module: {
       loaders: [
         {
-          test: '/.js?$/ | /.jsx?$/',
+          test:  /\.jsx?$/,
           loader: 'babel-loader',
           exclude: /node_modules/,
           query: {

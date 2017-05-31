@@ -16,7 +16,7 @@ compiler.run((err,stats) => {
     console.log(statsJson.errors)
     return err;
   }else{
-    console.log('Webpack success')
+    console.log('Webpack success');
   }
 });
 

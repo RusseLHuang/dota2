@@ -1,6 +1,7 @@
 
 public/scripts/
 public/css/*.css
+*.DS_Store
 
 # Logs
 logs
@@ -60,4 +61,3 @@ typings/
 
 # dotenv environment variables file
 .env
-

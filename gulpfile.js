@@ -1,8 +1,10 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const minify = require('gulp-minify-css');
+const sass = require('gulp-sass');
 
-const path = './public/stylesheets/*.css';
+const scss_path = './public/stylesheets/scss/*.scss';
+const path = './public/stylesheets/css/*.css';
 
 gulp.task('concat',function() {
   return gulp.src(path)
@@ -18,10 +20,16 @@ gulp.task('minify',function() {
   .pipe(gulp.dest('./public/stylesheets/'))
 })
 
+gulp.task('sass',function() {
+  return gulp.src(scss_path)
+  .pipe(sass.sync().on('error',sass.logError))
+  .pipe(gulp.dest('./public/stylesheets/css/'))
+})
+
 gulp.task('_watch', function() {
-  gulp.watch(path,['minify'])
+  gulp.watch(scss_path,['sass','concat','minify'])
   .on('change', function (event) {console.log('Css changed')});
 })
 
-gulp.task('watch',['_watch','concat','minify']);
-gulp.task('default',['concat','minify']);
+gulp.task('watch',['_watch','sass','concat','minify']);
+gulp.task('default',['sass','concat','minify']);
