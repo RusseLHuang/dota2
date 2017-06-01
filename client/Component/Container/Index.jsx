@@ -10,9 +10,15 @@ export class Index extends React.Component {
       <div>
         <div className="nav-bar-bg">
           <div className="nav-bar">
-            <div className="dota-logo">
+            <span className="dota-logo">
               <img src="/images/dotalogo.png"/>
-            </div>
+            </span>
+            <span className="nav-bar-item">
+              Heroespedia
+            </span>
+            <span className="nav-bar-item">
+              Home
+            </span>
           </div>
         </div>
         { this.props.children }

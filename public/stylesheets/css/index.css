@@ -1,6 +1,7 @@
 body {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  font-family: 'Radiance','arial','sans-serif' !important; }
 
 .nav-bar-bg {
   width: 100%;
@@ -20,3 +21,10 @@ body {
     margin: 0 auto; }
     .nav-bar-bg .nav-bar .dota-logo img {
       margin-top: 20px; }
+    .nav-bar-bg .nav-bar .nav-bar-item {
+      float: right;
+      color: #777;
+      font-size: 16px;
+      display: inline-block;
+      margin-top: 22px;
+      margin-right: 25px; }

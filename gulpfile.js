@@ -6,7 +6,7 @@ const sass = require('gulp-sass');
 const scss_path = './public/stylesheets/scss/*.scss';
 const path = './public/stylesheets/css/*.css';
 
-gulp.task('concat',function() {
+gulp.task('concat',['sass'],function() {
   return gulp.src(path)
   .pipe(concat('all.min.css'))
   .pipe(gulp.dest('./public/stylesheets/'))
