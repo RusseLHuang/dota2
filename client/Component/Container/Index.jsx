@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 export class Index extends React.Component {
   constructor(props) {
@@ -13,12 +14,16 @@ export class Index extends React.Component {
             <span className="dota-logo">
               <img src="/images/dotalogo.png"/>
             </span>
-            <span className="nav-bar-item">
-              Heroespedia
-            </span>
-            <span className="nav-bar-item">
-              Home
-            </span>
+            <Link to={`/heroes`} role="button" aria-haspopup="true" aria-expanded="false">
+              <span className="nav-bar-item">
+                Heroespedia
+              </span>
+            </Link>
+            <Link to={`/`} role="button" aria-haspopup="true" aria-expanded="false">
+              <span className="nav-bar-item">
+                Home
+              </span>
+            </Link>
           </div>
         </div>
         { this.props.children }
