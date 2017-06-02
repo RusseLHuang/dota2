@@ -1,10 +1,40 @@
+.heroes-container {
+  width: 100%;
+  height: 100%;
+  background: #202020;
+  position: absolute; }
+
+.heroes-box {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 35px; }
+  .heroes-box .heroes-box-top-shadow, .heroes-box .heroes-box-top,
+  .heroes-box .heroes-box-bottom-shadow, .heroes-box .heroes-box-bottom {
+    width: 100%;
+    margin: auto;
+    position: relative; }
+    .heroes-box .heroes-box-top-shadow img, .heroes-box .heroes-box-top img,
+    .heroes-box .heroes-box-bottom-shadow img, .heroes-box .heroes-box-bottom img {
+      width: inherit; }
+  .heroes-box .heroes-box-top-shadow, .heroes-box .heroes-box-bottom-shadow {
+    height: 25px; }
+  .heroes-box .heroes-box-top, .heroes-box .heroes-box-bottom {
+    z-index: 2;
+    height: 9px; }
+
+.heroes-box-inner {
+  width: 100%;
+  background-image: url("/images/centercolbox_repeat.png");
+  background-repeat: repeat-y;
+  background-size: 100%; }
+
 .home-banner {
   width: 100%;
   height: 500px;
   background: url("/images/dota2.jpg");
   background-position: 50% 20%;
   background-repeat: no-repeat;
-  background-size: 100%; }
+  background-size: cover; }
 
 .home-event {
   color: #beb5ae;
@@ -16,6 +46,7 @@
   .home-event .ti-story {
     background-image: url("/images/goldbg.jpg");
     background-position: center;
+    background-size: cover;
     top: 50%;
     position: relative;
     transform: translate(0, -50%);
@@ -39,7 +70,7 @@
   background: url("/images/theinternational.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%; }
+  background-size: cover; }
 
 body {
   width: 100%;
@@ -71,3 +102,11 @@ body {
       display: inline-block;
       margin-top: 22px;
       margin-right: 25px; }
+
+.nav-bar-shadow {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  background-image: url("/images/header_bg_shadow.png");
+  background-repeat: repeat-x;
+  z-index: 3; }

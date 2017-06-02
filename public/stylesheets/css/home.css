@@ -4,7 +4,7 @@
   background: url("/images/dota2.jpg");
   background-position: 50% 20%;
   background-repeat: no-repeat;
-  background-size: 100%; }
+  background-size: cover; }
 
 .home-event {
   color: #beb5ae;
@@ -16,6 +16,7 @@
   .home-event .ti-story {
     background-image: url("/images/goldbg.jpg");
     background-position: center;
+    background-size: cover;
     top: 50%;
     position: relative;
     transform: translate(0, -50%);
@@ -39,4 +40,4 @@
   background: url("/images/theinternational.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%; }
+  background-size: cover; }

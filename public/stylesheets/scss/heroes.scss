@@ -1,0 +1,35 @@
+.heroes-container {
+  width: 100%;
+  height: 100%;
+  background: #202020;
+  position: absolute;
+}
+
+.heroes-box {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 35px;
+  .heroes-box-top-shadow, .heroes-box-top,
+  .heroes-box-bottom-shadow, .heroes-box-bottom{
+    width: 100%;
+    margin: auto;
+    position: relative;
+    img {
+      width: inherit;
+    }
+  }
+  .heroes-box-top-shadow ,.heroes-box-bottom-shadow{
+    height: 25px;
+  }
+  .heroes-box-top ,.heroes-box-bottom{
+    z-index: 2;
+    height: 9px;
+  }
+}
+
+.heroes-box-inner {
+  width: 100%;
+  background-image: url('/images/centercolbox_repeat.png');
+  background-repeat: repeat-y;
+  background-size: 100%;
+}

@@ -32,5 +32,13 @@ body {
     }
 
   }
+}
 
+.nav-bar-shadow {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  background-image: url('/images/header_bg_shadow.png');
+  background-repeat: repeat-x;
+  z-index: 3;
 }

@@ -26,6 +26,8 @@ export class Index extends React.Component {
             </Link>
           </div>
         </div>
+        <div className="nav-bar-shadow">
+        </div>
         { this.props.children }
       </div>
     )
