@@ -8,7 +8,9 @@ class Home extends Component {
   render() {
     return (
       <section>
-        <div className="home-banner"></div>
+        <div className="home-banner">
+          <img src="/images/dota2.jpg" alt="dota2banner"/>
+        </div>
         <div className="home-event">
           <div className="ti-story">
             <section>
@@ -22,8 +24,9 @@ class Home extends Component {
             </section>
           </div>
         </div>
-        <section className="ti-banner">
-        </section>
+        <div className="ti-banner">
+          <img src="/images/theinternational.jpg" alt="theinternational"/>
+        </div>
       </section>
     );
   }
