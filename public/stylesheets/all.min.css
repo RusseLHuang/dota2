@@ -1,32 +1,150 @@
+.hvr-grow-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 59px;
+  height: 33px;
+  z-index: 1;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform; }
+
+.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  z-index: 5; }
+
+.hvr-grow-shadow span {
+  border: 2px solid black; }
+
+.hvr-grow-shadow span:hover {
+  border: 2px solid white; }
+
 .heroes-container {
   width: 100%;
   height: 100%;
   background: #202020;
-  position: absolute; }
+  position: relative; }
 
 .heroes-box {
-  width: 70%;
+  width: 1020px;
+  position: relative;
+  max-width: 1020px;
   margin: 0 auto;
-  margin-top: 35px; }
-  .heroes-box .heroes-box-top-shadow, .heroes-box .heroes-box-top,
+  padding-top: 20px; }
   .heroes-box .heroes-box-bottom-shadow, .heroes-box .heroes-box-bottom {
     width: 100%;
     margin: auto;
     position: relative; }
-    .heroes-box .heroes-box-top-shadow img, .heroes-box .heroes-box-top img,
     .heroes-box .heroes-box-bottom-shadow img, .heroes-box .heroes-box-bottom img {
       width: inherit; }
-  .heroes-box .heroes-box-top-shadow, .heroes-box .heroes-box-bottom-shadow {
+  .heroes-box .heroes-box-bottom-shadow {
     height: 25px; }
-  .heroes-box .heroes-box-top, .heroes-box .heroes-box-bottom {
+  .heroes-box .heroes-box-bottom {
     z-index: 2;
     height: 9px; }
 
+.heroes-box-top {
+  width: 100%;
+  position: relative;
+  height: 6px;
+  background-image: url("/images/centercolbox_top.png");
+  background-size: 100%; }
+
 .heroes-box-inner {
   width: 100%;
+  padding: 15px 20px 5px 20px;
+  position: relative;
   background-image: url("/images/centercolbox_repeat.png");
   background-repeat: repeat-y;
   background-size: 100%; }
+  .heroes-box-inner hr {
+    width: 90%;
+    margin: 0 auto;
+    border-top: 1px solid grey; }
+  .heroes-box-inner .heroes-header {
+    width: 80%;
+    margin: 0 auto;
+    background-color: black;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 48px;
+    font-family: "enc_land";
+    letter-spacing: 3px;
+    color: #8c8c8c !important; }
+  .heroes-box-inner .heroes-list {
+    padding: inherit;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    display: table; }
+    .heroes-box-inner .heroes-list #strength, .heroes-box-inner .heroes-list #agility, .heroes-box-inner .heroes-list #intelligence {
+      display: table-cell;
+      margin-left: 3%;
+      width: 30%;
+      height: 200px;
+      min-width: 250px; }
+      .heroes-box-inner .heroes-list #strength .col-header, .heroes-box-inner .heroes-list #agility .col-header, .heroes-box-inner .heroes-list #intelligence .col-header {
+        position: relative;
+        color: white;
+        text-align: center;
+        margin-bottom: 10px; }
+        .heroes-box-inner .heroes-list #strength .col-header span, .heroes-box-inner .heroes-list #agility .col-header span, .heroes-box-inner .heroes-list #intelligence .col-header span {
+          position: relative; }
+    .heroes-box-inner .heroes-list #strength .col-header span::before {
+      background-image: url("/images/overviewicon_str.png"); }
+    .heroes-box-inner .heroes-list #agility .col-header span::before {
+      background-image: url("/images/overviewicon_agi.png"); }
+    .heroes-box-inner .heroes-list #intelligence .col-header span::before {
+      background-image: url("/images/overviewicon_int.png"); }
+    .heroes-box-inner .heroes-list #strength .col-header span::before,
+    .heroes-box-inner .heroes-list #agility .col-header span::before,
+    .heroes-box-inner .heroes-list #intelligence .col-header span::before {
+      content: "";
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 110%; }
+
+.heroes-box-top::before {
+  top: -20px;
+  height: 20px;
+  z-index: 0;
+  background-image: url("/images/centercolbox_top_shadow.png"); }
+
+.heroes-box-inner:after {
+  z-index: 5;
+  height: 7px;
+  background-image: url("/images/centercolbox_bottom.png");
+  top: 100%; }
+
+.heroes-box-top::before, .heroes-box-inner:after {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-size: 100%;
+  background-repeat: no-repeat; }
+
+.heroes-grid-list span {
+  display: inline-block; }
+
+.hero-banner {
+  background-image: url("/images/heroes/banner/Blades_of_Voth_Domosh.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100%;
+  width: 100%;
+  position: absolute; }
 
 .home-banner {
   width: 100%; }
@@ -68,10 +186,23 @@
     width: 100%;
     margin: 0 auto; }
 
-body {
+html, #root {
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 1020px; }
+
+body, .navigation {
   width: 100%;
   height: 100%;
   font-family: 'Radiance','arial','sans-serif' !important; }
+
+[data-reactroot] {
+  height: 100% !important; }
+
+@font-face {
+  font-family: "enc_land";
+  src: url("/font/Enchanted Land.otf"); }
 
 .nav-bar-bg {
   width: 100%;
@@ -88,7 +219,8 @@ body {
   .nav-bar-bg .nav-bar {
     width: 70%;
     height: inherit;
-    margin: 0 auto; }
+    margin: 0 auto;
+    max-width: 1020px; }
     .nav-bar-bg .nav-bar .dota-logo img {
       margin-top: 20px; }
     .nav-bar-bg .nav-bar .nav-bar-item {

@@ -1,5 +1,7 @@
 import keymirror from 'keymirror';
 
 export const CONSTANT = keymirror({
-  test : null
+  FETCH_HEROES : null,
+  FETCH_HEROES_FAILED : null,
+  FETCH_HEROES_SUCCESS : null
 })

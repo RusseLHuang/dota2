@@ -20,7 +20,7 @@ compiler.run((err,stats) => {
   }
 });
 
-//require('./routes').default(app);
+require('./routes').default(app);
 
 app.use(express.static(path.join(__dirname,'../public')));
 app.use((req,res,next) => {

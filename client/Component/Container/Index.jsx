@@ -8,7 +8,7 @@ export class Index extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="navigation">
         <div className="nav-bar-bg">
           <div className="nav-bar">
             <span className="dota-logo">
