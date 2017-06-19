@@ -139,12 +139,9 @@
   display: inline-block; }
 
 .hero-banner {
-  background-image: url("/images/heroes/banner/Blades_of_Voth_Domosh.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  height: 100%;
-  width: 100%;
-  position: absolute; }
+  width: 100%; }
+  .hero-banner img {
+    width: inherit; }
 
 .home-banner {
   width: 100%; }

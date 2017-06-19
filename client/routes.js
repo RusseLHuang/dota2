@@ -8,8 +8,10 @@ import HeroInfo from 'Component/Container/HeroInfo.jsx';
 const route = (
 	<Route path="/" component={Index}>
 		<IndexRoute component={Home}/>
-		<Route path="heroes" component={Heroes}/>
-		<Route path="heroes/:heroId" component={HeroInfo}/>
+		<Route path="heroes">
+			<IndexRoute component={Heroes}/>
+			<Route path=":heroId" component={HeroInfo}/>
+		</Route>
 	</Route>
 )
 

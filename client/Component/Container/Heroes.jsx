@@ -9,6 +9,25 @@ class Heroes extends Component {
     super(props);
   }
 
+  // filterSentinelStrength(data) {
+  //   return data.team == "sentinel" && data.attr == "strength";
+  // }
+  // filterSentinelAgility(data) {
+  //   return data.team == "sentinel" && data.attr == "agility";
+  // }
+  // filterSentinelIntelligence(data) {
+  //   return data.team == "sentinel" && data.attr == "intelligence";
+  // }
+  // filterScourgeStrength(data) {
+  //   return data.team == "scourge" && data.attr == "strength";
+  // }
+  // filterScourgeAgility(data) {
+  //   return data.team == "scourge" && data.attr == "agility";
+  // }
+  // filterScourgeIntelligence(data) {
+  //   return data.team == "scourge" && data.attr == "intelligence";
+  // }
+
   componentWillMount() {
     this.props.dispatch(fetchHeroes());
   }
@@ -28,19 +47,19 @@ class Heroes extends Component {
                 <div className="col-header">
                   <span>Strength</span>
                 </div>
-                <HeroesGrid lists={this.props.sentinel_str}/>
+                <HeroesGrid lists={this.props.heroes_list.filter((data) => data.team == "sentinel" && data.attr == "strength")}/>
               </div>
               <div id="agility">
                 <div className="col-header">
                   <span>Agility</span>
                 </div>
-                <HeroesGrid lists={this.props.sentinel_agi}/>
+                <HeroesGrid lists={this.props.heroes_list.filter((data) => data.team == "sentinel" && data.attr == "agility")}/>
               </div>
               <div id="intelligence">
                 <div className="col-header">
                   <span>Intelligence</span>
                 </div>
-                <HeroesGrid lists={this.props.sentinel_int}/>
+                <HeroesGrid lists={this.props.heroes_list.filter((data) => data.team == "sentinel" && data.attr == "intelligence")}/>
               </div>
             </div>
           </div>
@@ -54,12 +73,7 @@ class Heroes extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  sentinel_str : state.heroes.sentinel_str,
-  sentinel_agi : state.heroes.sentinel_agi,
-  sentinel_int : state.heroes.sentinel_int,
-  scourge_str : state.heroes.scourge_str,
-  scourge_agi : state.heroes.scourge_agi,
-  scourge_int : state.heroes.scourge_int
+  heroes_list : state.heroes.heroes_list
 })
 
 export default connect(mapStateToProps)(Heroes);

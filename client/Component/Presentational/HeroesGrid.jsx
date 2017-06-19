@@ -13,9 +13,9 @@ class HeroesGrid extends Component {
       <div className="heroes-grid-list">
         {
           lists.map(list =>
-            <Link to={`/heroes/test`} className="hvr-grow-shadow">
+            <Link to={`/heroes/${list.id}`} className="hvr-grow-shadow">
               <span>
-                <img src={list.icon} alt={list.name}/>
+                <img src={list.icon} alt={list.name} width="59px" height="33px"/>
               </span>
             </Link>
           )
