@@ -21,6 +21,11 @@ class HeroInfo extends Component {
         <div className="hero-banner">
           <img src={banner} alt={name}/>
         </div>
+        <div className="body-container">
+          <div className="inner-container">
+            Testing box
+          </div>
+        </div>
       </div>
     );
   }

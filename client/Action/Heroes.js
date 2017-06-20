@@ -24,3 +24,12 @@ export const fetchHeroes = () => {
     });
   }
 }
+
+export const setCurrentHoverHero = (data) => {
+  return dispatch => {
+    dispatch({
+      type : CONSTANT.SET_ONHOVER_HERO,
+      payload : data
+    });
+  }
+}

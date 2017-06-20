@@ -9,25 +9,6 @@ class Heroes extends Component {
     super(props);
   }
 
-  // filterSentinelStrength(data) {
-  //   return data.team == "sentinel" && data.attr == "strength";
-  // }
-  // filterSentinelAgility(data) {
-  //   return data.team == "sentinel" && data.attr == "agility";
-  // }
-  // filterSentinelIntelligence(data) {
-  //   return data.team == "sentinel" && data.attr == "intelligence";
-  // }
-  // filterScourgeStrength(data) {
-  //   return data.team == "scourge" && data.attr == "strength";
-  // }
-  // filterScourgeAgility(data) {
-  //   return data.team == "scourge" && data.attr == "agility";
-  // }
-  // filterScourgeIntelligence(data) {
-  //   return data.team == "scourge" && data.attr == "intelligence";
-  // }
-
   componentWillMount() {
     this.props.dispatch(fetchHeroes());
   }
@@ -39,7 +20,7 @@ class Heroes extends Component {
           <div className="heroes-box-top"></div>
           <div className="heroes-box-inner">
             <section className="heroes-header">
-              <p>Invoker</p>
+              <p>{ this.props.onHover_Hero }</p>
             </section>
             <hr/>
             <div className="heroes-list">
@@ -48,18 +29,21 @@ class Heroes extends Component {
                   <span>Strength</span>
                 </div>
                 <HeroesGrid lists={this.props.heroes_list.filter((data) => data.team == "sentinel" && data.attr == "strength")}/>
+                <HeroesGrid lists={this.props.heroes_list.filter((data) => data.team == "scourge" && data.attr == "strength")}/>
               </div>
               <div id="agility">
                 <div className="col-header">
                   <span>Agility</span>
                 </div>
                 <HeroesGrid lists={this.props.heroes_list.filter((data) => data.team == "sentinel" && data.attr == "agility")}/>
+                <HeroesGrid lists={this.props.heroes_list.filter((data) => data.team == "scourge" && data.attr == "agility")}/>
               </div>
               <div id="intelligence">
                 <div className="col-header">
                   <span>Intelligence</span>
                 </div>
                 <HeroesGrid lists={this.props.heroes_list.filter((data) => data.team == "sentinel" && data.attr == "intelligence")}/>
+                <HeroesGrid lists={this.props.heroes_list.filter((data) => data.team == "scourge" && data.attr == "intelligence")}/>
               </div>
             </div>
           </div>
@@ -73,7 +57,8 @@ class Heroes extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  heroes_list : state.heroes.heroes_list
+  heroes_list : state.heroes.heroes_list,
+  onHover_Hero : state.heroes.onHover_Hero
 })
 
 export default connect(mapStateToProps)(Heroes);

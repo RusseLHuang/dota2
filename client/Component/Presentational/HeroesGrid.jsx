@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { setCurrentHoverHero } from 'Action/Heroes.js';
+import { connect } from 'react-redux';
 
 class HeroesGrid extends Component {
 
   constructor(props) {
     super(props);
+    this.setOnHoverHero = this.setOnHoverHero.bind(this);
+  }
+
+  setOnHoverHero(e) {
+    const name = e.target.getAttribute("alt");
+    this.props.triggerHoverHero(name);
   }
 
   render() {
@@ -15,7 +23,7 @@ class HeroesGrid extends Component {
           lists.map(list =>
             <Link to={`/heroes/${list.id}`} className="hvr-grow-shadow">
               <span>
-                <img src={list.icon} alt={list.name} width="59px" height="33px"/>
+                <img onMouseOver={ this.setOnHoverHero } src={list.icon} alt={list.name} width="59px" height="33px"/>
               </span>
             </Link>
           )
@@ -23,7 +31,12 @@ class HeroesGrid extends Component {
       </div>
     );
   }
-
 }
 
-export default HeroesGrid;
+const mapDispatchToProps = (dispatch) => ({
+  triggerHoverHero : (data) => {
+    dispatch(setCurrentHoverHero(data))
+  }
+})
+
+export default connect(null,mapDispatchToProps)(HeroesGrid);
